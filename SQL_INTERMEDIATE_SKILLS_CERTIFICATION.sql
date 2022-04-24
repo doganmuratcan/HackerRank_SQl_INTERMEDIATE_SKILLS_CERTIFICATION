@@ -3,7 +3,7 @@
 select u.country_name,count(*),avg(i.total_price)
 
 from country co INNER JOIN city ci ON co.id=ci.country_id
-JOIN customer cu ON ci.id=cu.city_id
+INNER JOIN customer cu ON ci.id=cu.city_id
 INNER JOIN invoice i ON cu.id=i.customer_id
 
 group by co.country_name
